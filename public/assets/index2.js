@@ -1,0 +1,1 @@
+$(".chart-circle").length&&$(".chart-circle").each(function(){let t=$(this);t.circleProgress({fill:{color:t.attr("data-color")},size:t.height(),startAngle:-Math.PI/4*2,emptyFill:"#f6f6f6",lineCap:"round"})});
