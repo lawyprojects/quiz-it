@@ -70,16 +70,24 @@ class QuizController extends Controller
         $quizSessionId = $this->getSessionId();
     
         if($quizSessionId){
-            $quizSession = new QuizSession();
-            $quizSession->quiz_Id = $quizId;
-            $quizSession->save();
            
-    
+            $quizSession = QuizSession::where("session_id",$quizSessionId)->first();
+            if($quizSession == null){
+                $quizSession = $this->createQuizSession($quizId);
+            }
         }else {
-            $quizSession = $this->createQuizSession($quizId) ;
+            $quizSession = $this->createQuizSession($quizId);
+           
+           
         }
 
         return $quizSession;
 
+    }
+
+    /**
+     * Update Seesion Questions 
+     */
+    public function updateQuizSessionQuestions($sessionId){
     }
 }

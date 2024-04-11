@@ -84,10 +84,10 @@
             </div>
             <!-- MAIN-CONTENT -->
             <div class="main-content mt-0 ms-0">
-                <div class="side-app ">
+                <div class="side-app1 ">
                     <div class="container px-sm-0">
                         <div class="row">
-                         @livewire('quiz.quiz',['quizId' => $quizId])
+                         @livewire('quiz.quiz',['quizId' => $quizId ])
 
                         </div>
                     </div>
