@@ -149,5 +149,12 @@ class Quiz extends Component
 
     }
 
+    public function quizScore(){
+        $correctAnswerCount = QuizSessionQuestion::where('quiz_session_id', $this->quizSession->id)->where('is_correct',1)->count();
+        $quizQuestions =  QuizSessionQuestion::where('quiz_session_id', $this->quizSession->id)->count();
+
+        return $correctAnswerCount."/".$quizQuestions;
+    }
+
 
 }
