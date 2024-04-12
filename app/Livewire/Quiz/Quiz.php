@@ -156,5 +156,9 @@ class Quiz extends Component
         return $correctAnswerCount."/".$quizQuestions;
     }
 
+    public function answerCorrect(){
+       return AnswersController::validatedQuestionAnswers($this->quizSession->id, $this->question->id);
+    }
+
 
 }

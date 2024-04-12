@@ -127,13 +127,18 @@
         @endif
 
         <!--Correct -->
-        @if($correct == true)
-        <x-quiz.correct-alert />
+        
+        @if($this->questionAnswered() && $this->quizComplete() == false)
+            @if($this->answerCorrect() == true)
+            <x-quiz.correct-alert />
+            @endif
         @endif
 
         <!--In Correct -->
-        @if($inCorrect == true)
-        <x-quiz.in-correct-alert />
+        @if($this->questionAnswered() && $this->quizComplete() == false)
+            @if($this->answerCorrect() == false)
+            <x-quiz.in-correct-alert />
+            @endif
         @endif
 
         <div class="row height">
